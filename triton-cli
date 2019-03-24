@@ -1,0 +1,7 @@
+#!/bin/sh
+TRITONCLI_IMAGE=${TRITONCLI_IMAGE:-"localhost/triton-cli:latest"}
+exec podman run --rm -it --security-opt=label=disable \
+	-e "SSH_AUTH_SOCK=${SSH_AUTH_SOCK}" \
+	-v "${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK}" \
+	-v "${HOME}/.config/triton:/root/.triton" \
+	"${TRITONCLI_IMAGE}"

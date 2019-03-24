@@ -22,5 +22,5 @@ if [ ! -d "${HOME}/.triton/docker" ]; then
 fi
 
 eval "$(triton env)"
-export PS1="${SDC_ACCOUNT}@${TRITON_PROFILE} \W\\$ "
+echo 'PS1="${SDC_ACCOUNT}@${TRITON_PROFILE} \W\\$ "' >> /root/.bashrc
 exec /bin/bash "$@"

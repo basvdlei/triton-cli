@@ -1,6 +1,7 @@
-FROM docker.io/library/node:10-alpine
-RUN apk add --update bash build-base curl openssh python && \
-    rm -rf /var/cache/apk/*
+FROM docker.io/library/node:10-slim
+RUN apt-get update && \
+	apt-get install -y curl build-essential openssh-client python && \
+	rm -rf /var/lib/apt/lists/*
 
 # Triton CLI
 RUN npm install --unsafe-perm -g triton

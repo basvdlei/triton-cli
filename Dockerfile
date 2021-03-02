@@ -1,4 +1,4 @@
-FROM docker.io/library/node:12-slim
+FROM docker.io/library/node:14-slim
 RUN apt-get update && \
 	apt-get install -y curl build-essential openssh-client python vim && \
 	rm -rf /var/lib/apt/lists/*

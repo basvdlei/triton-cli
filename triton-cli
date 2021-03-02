@@ -4,4 +4,5 @@ exec podman run --rm -it --security-opt=label=disable \
 	-e "SSH_AUTH_SOCK=${SSH_AUTH_SOCK}" \
 	-v "${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK}" \
 	-v "${HOME}/.config/triton:/root/.triton" \
+	-v "${HOME}/Public:/public" \
 	"${TRITONCLI_IMAGE}"
